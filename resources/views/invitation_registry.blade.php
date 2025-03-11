@@ -13,9 +13,10 @@
         }
 
         body {
-            /* background: #f2f2f2; */
-            background-image: url("{{ asset('/eftar_ramadan.webp') }}");
+            
+            background-image: url("{{ asset('/eftar2.jpg') }}");
             background-repeat: no-repeat;
+            background-position: middle center;
             background-size: cover;
             /* Adjust as needed */
             font-family: 'Arial', sans-serif;
@@ -27,7 +28,10 @@
 
         /* Invitation Container */
         .invitation-container {
-            background: #fff;
+            /* background: #fff; */
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -100,41 +104,38 @@
             <br>
         @endforeach
     @endif
+    <div style="margin:auto;width:250px"><img  style="width:250px;height:auto; " alt="dania Logo" src="{{ asset('logo.png') }}" /></div>
+
         <h1>You're Invited!</h1>
         <form action="{{route('invitation.store')}}" method="post" class="invitation-form">
             @csrf
             <div class="form-group">
-                <label for="name">Your Name</label>
+                <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Enter your name">
             </div>
             <div class="form-group">
-                <label for="email">Email Address</label>
+                <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email">
             </div>
             <div class="form-group">
-                <label for="email">Your Position</label>
+                <label for="email">Position</label>
                 <input type="text" id="position" name="position" placeholder="Enter your Position">
             </div>
             <div class="form-group">
-                <label for="guests">Number of Guests</label>
+                <label for="guests">Guests</label>
                 <input type="number" id="guests" name="guest_count" min="1"
 
-                 placeholder="Number of guests">
+                 placeholder="Number of guests without You">
             </div>
 
             <div class="form-group">
-                <label for="company">Company Name</label>
+                <label for="company">Company</label>
                 <input type="text" id="company" name="company" placeholder="Enter your company name">
             </div>
             <div class="form-group">
-                <label for="phone">Phone Number</label>
+                <label for="phone">Phone</label>
                 <input type="number" id="phone" name="phone" placeholder="Enter your phone number">
             </div>
-            <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" id="address" name="address" placeholder="Enter your address">
-            </div>
-
             <button type="submit">Submit</button>
         </form>
     </div>

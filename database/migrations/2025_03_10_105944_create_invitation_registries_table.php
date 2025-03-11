@@ -19,7 +19,6 @@ return new class extends Migration
             $table->unsignedInteger('guest_count');
             $table->string('company');
             $table->unsignedInteger('phone');
-            $table->string('address');
             $table->timestamps();
         });
     }

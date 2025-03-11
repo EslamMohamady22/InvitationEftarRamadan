@@ -23,3 +23,4 @@ Route::get('/', function () {
 Route::post('/invitation',[InvitationRegistryController::class,'store'])->name('invitation.store');
 Route::get('/show_qrcode',[InvitationRegistryController::class,'show_qrcode'])->name('invitation.show_qrcode');
 Route::get('/show_data',[InvitationRegistryController::class,'show_data'])->name('invitation.show_data');
+Route::get('/show_all',[InvitationRegistryController::class,'show_all'])->name('invitation.show_all');
